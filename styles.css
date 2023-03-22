@@ -1,0 +1,316 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+  /* el siguiente es sacado de hero patterns */
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23ff002d' fill-opacity='0.1'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+a {
+  color:white;
+  /* el siguiente es para quitarle el subrayado */
+  text-decoration: none;
+}
+
+ul {
+  /* dejar libre uso la lista */
+  list-style: none;
+}
+
+.caja {
+  /* aqui es el ancho de la caja */
+  width: 95%;
+  margin: auto;
+}
+/* vamos a crear los esstilos de navegacion */
+
+.nav-main {
+  font-size: 17px;
+  /* display me permite organizar los elemenos a mi favor */
+  display: flex;
+  /* van a utilizar todo el ancho disponible */
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 20px 0;
+}
+
+.nav-brandImagen {
+  /* vamos a disminuirle la altura a la imagen */
+  height: 40px;
+}
+
+/* navegacionIzquierda */
+.nav-main ul {
+  display: flex;
+}
+
+/* vamos a darle una separacion a los elementos de la lista */
+.nav-main ul li {
+  padding: 10px;
+}
+.nav-main ul li a{
+    padding: 20px;
+}
+
+/* aqui hacemos que cuando se seleccione un elemento pueda crear un efecto de lineado cuando lo seleccionamos en los elementos "a" */
+.nav-main ul li a:hover{
+border-bottom: 2px solid white;
+}
+
+/* aqui dentro de la clase nav-menu colocaremos un margen de unos pixeles al lado de la imagen brand.jpg */
+.nav-main ul.nav-menu {
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* SHOWCASE */
+.showcase{
+    /* vamos a añadir una imagen centrada con el siguiente ancho y alto */
+    width: 100%;
+    height: 550px;
+    background:url('./imagenes/image-four.jpg') no-repeat center center/cover;
+    padding: 50px;
+    /* aqui vamos a separar la imagen showcas de las news */
+    margin-bottom:20px ;
+    /* vamos a concentrarnos en el texto dentro de la imagen */
+    display: flex;
+    padding-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end ;
+
+}
+
+/* ahora vamos a hacer un boton en el texto leer mas */
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    /* el padding me permite crear la distancia de los lados del boton */
+    /* padding (y,x) el padding se expanden en "y" y "x" */
+    padding: 10px 20px;
+    /* El boton va a ser negro */
+    background: #262626;
+    /* y las letras blancas */
+    color: white;
+    /* el tamaño de la letra */
+    font-size: 15px;
+    /* vamos a crear el borde del cuadro del boton */
+    border: 1px solid white;
+    margin: 10 0px;
+}
+
+/* vamos a añadir un efecto de opacidad al boton*/
+.btn:hover{
+  opacity: .7;
+}
+
+/* vamos a añadir una ligera separación a p y h2 */
+.showcase h2,
+.showcase p{
+  margin-bottom: 10px;
+}
+
+/* tambien se la vamos a añadir al hr una separacion*/
+hr{
+  /* 10 px hacia abajo y arriba de 10 px y 0 a los lados */
+  margin: 10px 0;
+}
+
+
+
+/* news cards */
+.news-cards{
+  /* aqui vamos a crear una fila de 4 columnas para las noticias*/
+  display: grid;
+  /* aqui seria una fila con cuatro columnas */
+  grid-template-columns: repeat(4,1fr);
+  /* vamos a añadir un espaciado interno de columna*/
+  gap: 25px;
+  /* el siguiente es para añadir espacio para nuevas news */
+  margin: 10px 0;
+}
+
+/* vamos a reducir el tamaño de las imagenes de las noticias */
+.news-cards img{
+  width: 100%;
+  height: 180px;
+
+}
+
+/* aumentar el tamaño del h3 y separarlo del p */
+.news-cards h3{
+  font-size:20px ;
+  margin:10px 0;
+}
+
+/* vamos a cambiar los atributos de las etiquetas a */
+.news-cards a{
+   padding: 10px 0;
+   color: #f2f2f2;
+   text-transform: uppercase;
+   display: inline-block;
+   font-weight: bold;
+}
+
+/* vamos a añadir el efecto de subrayado a la tag a */
+.news-cards a:hover{
+  text-decoration: underline;
+}
+
+/* seccion del banner */
+/* definimos el alto y ancho y ponemos de backg
+la imagen y un margen hacia abajo de 40 px */
+.cards-banner{
+  width: 100%;
+  height: 350px;
+  background:url(imagenes/tech-red.jpg);
+  margin-bottom: 40px;
+}
+
+.cards-banner .content{
+  width: 40%;
+  /* separacian padding(arriba,abajo,derecha,izquierda */
+  padding: 90px 0 0 30px;
+  color: white;
+}
+
+/* caractericas del texto y separacion del texto */
+.cards-banner p,
+.cards-banner h2{
+  margin: 10px 0 20px 0;
+}
+
+/* segundo banner */
+.segundo-banner{
+  width: 100%;
+  height: 350px;
+  background:url(imagenes/image-five.jpg) no-repeat center center/cover;
+  margin-bottom: 40px;
+}
+
+.segundo-banner .content{
+  width: 50%;
+  /* separacian padding(arriba,abajo,derecha,izquierda */
+  padding: 100px 0 0 30px;
+  color: white;
+}
+
+/* caractericas del texto y separacion del texto */
+.segundo-banner p,
+.segundo-banner h2{
+  margin: 10px 0 20px 0;
+}
+
+/* redes sociales */
+.social{
+  margin: 50px;
+}
+
+/* agregamos la modificacion al texto */
+.social p{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* aqui vamos a centrar los elementos entre ellos y la pagina */
+.links{
+  display: flex;
+  /* aqui alinea los elementos al centro del div */
+  align-items: center;
+  /* en este alinea los elementos dentro de la pagina */
+  justify-content: center;
+}
+
+/* hay un margen de izq a der de 30 px */
+.links a{
+  margin: 0 30px;
+}
+
+/* le cambiamos el tamaño a los iconos */
+.links a i{
+  font-size: 3rem;
+ 
+}
+
+/* links del footer */
+.footer-links {
+  background: #2f3640;
+  color: #616161;
+  font-size: 12px;
+  padding: 35px 0;
+}
+
+/* crear las columnas */
+.footer-container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  /* Espaciado entre las columnas */
+  gap: 10px;
+/* con estas dos se da el efecto de cada una esta en su columna */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* aqui una margen entre ek ul y li */
+.footer-container ul{
+  margin: 0 auto;
+}
+
+/* aqui es para hacer una separacion entre los  li */
+.footer-container ul li{
+  line-height: 2.8;
+}
+
+.footer{
+  background: #2f3640;
+  color: #616161;
+  font-size: 12px;
+  padding: 20px 0;
+  text-align: center;
+  padding-bottom: 2px;
+}
+
+/* aqui vamos a hacer diseño responsivo para dispostivos mobiles */
+@media (max-width:700px){
+    .nav-main ul.nav-menu{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #2f3640;
+      height: 100px;
+      padding: 30px;
+      opacity: .9;
+      transform: translateX(-20px);
+    }
+
+  .nav-main ul.nav-menu li{
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .news-cards{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .cards-banner .content{
+    width: 80%;
+  }
+  .segundo-banner .content{
+    width: 80%;
+  }
+  .footer-links .footer-container{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
